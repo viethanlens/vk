@@ -1,0 +1,20 @@
+name: Cập nhật sitemap và robots
+on:
+  push:
+    paths: ['**.html']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: python3 tao-sitemap.py
+      - run: |
+          git config user.name "sitemap-bot"
+          git config user.email "sitemap-bot@users.noreply.github.com"
+          git add sitemap.xml robots.txt
+          git diff --staged --quiet || (git commit -m "Tự động cập nhật sitemap.xml và robots.txt" && git push)
