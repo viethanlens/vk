@@ -13,11 +13,11 @@ def ngay(f):
 
 def uu_tien(f):
     if f == "index.html": return "1.0"
-    if f == "san-pham.html": return "0.9"
+    if f == "kinh-ap-trong.html": return "0.8"
     if f.startswith(("kinh-ap-trong-", "nuoc-ngam-", "hop-", "may-rua", "coc-rua", "nhip-", "nho-mat")): return "0.8"
     return "0.6"
 
-files = [f for f in ("index.html", "san-pham.html", "khuyen-mai.html") if os.path.exists(f)]  # chỉ các trang đang dùng; thêm trang mới vào danh sách này khi cần
+files = [f for f in ("index.html", "kinh-ap-trong.html", "khuyen-mai.html") if os.path.exists(f)]  # chỉ các trang đang dùng; thêm trang mới vào danh sách này khi cần
 out = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for f in files:
     loc = SITE if f == "index.html" else SITE + f
