@@ -1,0 +1,33 @@
+{
+ "v": 1,
+ "repo": {
+  "owner": "viethanlens",
+  "name": "vk",
+  "branch": "vklens.vn"
+ },
+ "site": "https://vklens.vn/",
+ "siteName": "SAIGON LUXURY LENS STORE top",
+ "token": {
+  "iv": "E7yukNKfUQibJv7A",
+  "ct": "1mvIdjk/reLgUZrv5d0NpM/NEdLRDvBPBV31Q+CGibOTmTQxxUsmFHnxvEGUyA1ooddirD2hWtfvekn1VCUIqtWFNfAejOjCTG4wyW+QDTgEhyI75oy7WdQg4LH+kJT/52+qI9YP8DiDfiK3GA=="
+ },
+ "lock": {
+  "salt": "aA2zG2hwvh+PCanWZZeZgw==",
+  "iv": "8orqrBK9xcQMYHx5",
+  "ct": "cjpMojOEUy+eT27xfrxkoPMm"
+ },
+ "users": [
+  {
+   "u": "admin",
+   "name": "VK Lens",
+   "role": "admin",
+   "active": true,
+   "salt": "xRQMKqnTsS685VGgZBixeg==",
+   "iv": "PWZ/X/tBYnkjowXU",
+   "ct": "OqLhJUWu2BfZnTGwcSTWqseYjXXjFUgk4bH6xlkb4f4+NKJRXUl1QQjbh8Nm4uTz"
+  }
+ ],
+ "locks": {},
+ "kw": {},
+ "created": "2026-11-06T09:47:42+07:00"
+}
