@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vklens.vn/kinh-ap-trong-quan-10/sitemap.xml
