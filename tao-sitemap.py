@@ -13,6 +13,7 @@ def ngay(f):
 
 def uu_tien(f):
     if f == "index.html": return "1.0"
+    if f.startswith("kinh-ap-trong-quan-10/"): return "0.6"
     if f == "kinh-ap-trong.html": return "0.8"
     if f == "chuyen-muc.html": return "0.9"
     if f.startswith("chuyen-muc/"): return "0.8"
@@ -20,9 +21,11 @@ def uu_tien(f):
     return "0.6"
 
 files = [f for f in ("index.html", "kinh-ap-trong.html", "khuyen-mai.html", "tuyen-dung.html") if os.path.exists(f)] + ["chuyen-muc.html"] + sorted(glob.glob("chuyen-muc/*.html"))  # chỉ các trang đang dùng; thêm trang mới vào danh sách này khi cần
+Q10 = "kinh-ap-trong-quan-10/"
+files += [Q10 + "index.html"] + sorted(f for f in glob.glob(Q10 + "*.html") if not f.endswith("/index.html"))  # site VK LENS quận 10
 out = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for f in files:
-    loc = SITE if f == "index.html" else SITE + f
+    loc = SITE if f == "index.html" else (SITE + Q10 if f == Q10 + "index.html" else SITE + f)
     out.append(f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{ngay(f)}</lastmod>\n    <priority>{uu_tien(f)}</priority>\n  </url>")
 out.append("</urlset>")
 open("sitemap.xml", "w", encoding="utf-8").write("\n".join(out) + "\n")
